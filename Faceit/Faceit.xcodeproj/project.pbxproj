@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E26F1AD81EDC961E00CCD355 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26F1AD71EDC961E00CCD355 /* FacialExpression.swift */; };
+		E26F1ADA1EDCA1E600CCD355 /* EmotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26F1AD91EDCA1E600CCD355 /* EmotionsViewController.swift */; };
 		E27049081ED6DE5A001334B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27049071ED6DE5A001334B1 /* AppDelegate.swift */; };
-		E270490A1ED6DE5A001334B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27049091ED6DE5A001334B1 /* ViewController.swift */; };
+		E270490A1ED6DE5A001334B1 /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27049091ED6DE5A001334B1 /* FaceViewController.swift */; };
 		E270490D1ED6DE5A001334B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E270490B1ED6DE5A001334B1 /* Main.storyboard */; };
 		E270490F1ED6DE5A001334B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E270490E1ED6DE5A001334B1 /* Assets.xcassets */; };
 		E27049121ED6DE5A001334B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27049101ED6DE5A001334B1 /* LaunchScreen.storyboard */; };
@@ -18,9 +19,10 @@
 
 /* Begin PBXFileReference section */
 		E26F1AD71EDC961E00CCD355 /* FacialExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
+		E26F1AD91EDCA1E600CCD355 /* EmotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionsViewController.swift; sourceTree = "<group>"; };
 		E27049041ED6DE5A001334B1 /* Faceit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Faceit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E27049071ED6DE5A001334B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E27049091ED6DE5A001334B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E27049091ED6DE5A001334B1 /* FaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
 		E270490C1ED6DE5A001334B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E270490E1ED6DE5A001334B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E27049111ED6DE5A001334B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,9 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				E27049071ED6DE5A001334B1 /* AppDelegate.swift */,
-				E27049091ED6DE5A001334B1 /* ViewController.swift */,
+				E27049091ED6DE5A001334B1 /* FaceViewController.swift */,
 				E27049191ED6DE83001334B1 /* FaceView.swift */,
 				E26F1AD71EDC961E00CCD355 /* FacialExpression.swift */,
+				E26F1AD91EDCA1E600CCD355 /* EmotionsViewController.swift */,
 				E270490B1ED6DE5A001334B1 /* Main.storyboard */,
 				E270490E1ED6DE5A001334B1 /* Assets.xcassets */,
 				E27049101ED6DE5A001334B1 /* LaunchScreen.storyboard */,
@@ -143,8 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E270490A1ED6DE5A001334B1 /* ViewController.swift in Sources */,
+				E270490A1ED6DE5A001334B1 /* FaceViewController.swift in Sources */,
 				E26F1AD81EDC961E00CCD355 /* FacialExpression.swift in Sources */,
+				E26F1ADA1EDCA1E600CCD355 /* EmotionsViewController.swift in Sources */,
 				E27049081ED6DE5A001334B1 /* AppDelegate.swift in Sources */,
 				E270491A1ED6DE83001334B1 /* FaceView.swift in Sources */,
 			);
