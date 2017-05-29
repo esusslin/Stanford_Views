@@ -12,11 +12,26 @@ class FaceView: UIView {
 
     //PUBLIC API - @Instectable
     
-    @IBInspectable var scale: CGFloat = 0.9
-    @IBInspectable var eyesOpen: Bool = true
-    @IBInspectable var mouthCurvature: Double = -1.0    // 1.0 is full smile, and -1.0 is full frown
-    @IBInspectable var lineWidth: CGFloat = 5.0
-    @IBInspectable var color: UIColor = UIColor.blue
+    @IBInspectable var scale: CGFloat = 0.9 {  didSet { setNeedsDisplay() } }
+    @IBInspectable var eyesOpen: Bool = true  {  didSet { setNeedsDisplay() } }
+    @IBInspectable var mouthCurvature: Double = 1.0 {  // 1.0 is full smile, and -1.0 is full frown
+        didSet { setNeedsDisplay() } }
+    @IBInspectable var lineWidth: CGFloat = 5.0  {  didSet { setNeedsDisplay() } }
+    @IBInspectable var color: UIColor = UIColor.blue     {  didSet { setNeedsDisplay() } }
+    
+    
+    func changeScale(byReactingTo pinchRecognizer: UIPinchGestureRecognizer)
+    {
+        switch pinchRecognizer.state {
+        case .changed, .ended:
+            scale *= pinchRecognizer.scale
+            print("scale = \(scale)")
+            // reset size to 1.0
+            pinchRecognizer.scale = 1.0
+        default:
+            break
+        }
+    }
     
     
     private var skullRadius: CGFloat {
