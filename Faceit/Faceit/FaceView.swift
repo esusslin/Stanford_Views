@@ -10,9 +10,13 @@ import UIKit
 
 class FaceView: UIView {
 
-    var scale: CGFloat = 0.9
+    //PUBLIC API - @Instectable
     
-    var eyesOpen: Bool = true
+    @IBInspectable var scale: CGFloat = 0.9
+    @IBInspectable var eyesOpen: Bool = true
+    @IBInspectable var mouthCurvature: Double = -1.0    // 1.0 is full smile, and -1.0 is full frown
+    @IBInspectable var lineWidth: CGFloat = 5.0
+    @IBInspectable var color: UIColor = UIColor.blue
     
     
     private var skullRadius: CGFloat {
@@ -61,6 +65,29 @@ class FaceView: UIView {
         return path
     }
     
+    private func pathForMouth() -> UIBezierPath {
+        
+        let mouthWidth = skullRadius / Ratios.skullRadiusToMouthWidth
+        let mouthHeight = skullRadius / Ratios.skullRadiusToMouthHeight
+        let mouthOffset = skullRadius / Ratios.skullRadiusToMouthOffset
+        
+        let mouthOrigin = CGPoint(x: skullCenter.x - mouthWidth/2, y: skullCenter.y + mouthOffset)
+        let mouthSize = CGSize(width: mouthWidth, height: mouthHeight)
+        let mouthRect = CGRect(origin: mouthOrigin, size: mouthSize)
+        
+        let smileOffset = CGFloat(max(-1, min(mouthCurvature, 1))) * mouthRect.height
+        
+        let start = CGPoint(x: mouthRect.minX, y: mouthRect.minY)
+        let end = CGPoint(x: mouthRect.maxX, y: mouthRect.minY)
+        
+        let cp1 = CGPoint(x: start.x + mouthRect.width / 3, y: start.y + smileOffset)
+        let cp2 = CGPoint(x: end.x - mouthRect.width / 3, y: end.y + smileOffset)
+        
+        let path = UIBezierPath()
+        path.move(to: start)
+        path.addCurve(to: end, controlPoint1: cp1, controlPoint2: cp2)
+        path.lineWidth = lineWidth
+        return path    }
     
     
     
@@ -78,6 +105,7 @@ class FaceView: UIView {
         pathForSkull().stroke()
         pathForEye(.left).stroke()
         pathForEye(.right).stroke()
+        pathForMouth().stroke()
     }
     
     private struct Ratios {
